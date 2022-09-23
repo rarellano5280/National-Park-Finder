@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/style.css" />
+    <title>National Park Finder</title>
+</head>
+
+<body>
+    <header>
+        <div id="upper-header">
+            <h1 class="name-tag">
+                National Park Finder
+            </h1>
+            <nav>
+                <div id="nav-menu">
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div id="header-img">
+            <img src="" alt="header image">
+        </div>
+    </header>
+    <main>
+        <div id="tagline"></div>
+        <div id="search-bar">
+            <form id="user-form">
+                <label id="city-search">Search a state:</label>
+                <input id="city" style="font-size:25px;" type="text" placeholder="Colorado" autofocus="true" />
+                <button type="submit" id="submitBtn" class="btn">Search</button>
+            </form>
+        </div>
+        <div id="search-history"></div>
+        <div id="map"></div>
+    </main>
+    <main>
+        <div id="park-name"></div>
+        <div id="forecast-container"></div>
+        <div id="parkinfo"></div>
+        <div id="thingstodo"></div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>
