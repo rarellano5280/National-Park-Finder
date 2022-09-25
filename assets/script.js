@@ -12,8 +12,28 @@ function getWeatherForecast(city){
     })
     .then(function(data){
         console.log("data :" +JSON.stringify(data))
+        saveSearch(city);
+
     })
 }
+
+var saveSearch = function(newSearch){
+    let repeat = false;
+// Check if search in local storage
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage["cities" + i] === newSearch) {
+            repeat = true;
+            break;
+        }
+    }
+// Save to localStorage if search is new
+    if (repeat === false) {
+        localStorage.setItem('cities' + localStorage.length, newSearch);
+    }
+}
+
+
+
 
 // seach button event listener
 $("#submitBtn").on("click", function(event){
