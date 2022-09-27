@@ -26,10 +26,12 @@ function getParkInfo(){
             console.log("Park Data :", data.data);
 })};
 
+// pulls map up
 $(document).ready(function () {
     $('#map').usmap({});
 });
 
+// lets you click on map to run function
 $('#map').usmap({
     click: function (event, data) {
         // Output the abbreviation of the state name to the console
