@@ -65,7 +65,14 @@ html{
     box-shadow: 0 0 1.5rem white;
     transition: all .1s ease-in-out;
     transform: scale(2.2);
-  }
+}
 
+.hide{
+    display:none;
+}
+
+/*  adding and removing class in JS -
+$('#className').classList.add('hide')
+$('#className').classList.remove('hide') */
 
 
