@@ -82,7 +82,7 @@ function getWeatherForecast(lat, long) {
                         <li><img src="${icon}"></li>
                       <li>High: ${highTemp}&#8457;</li>
                       <li>Low: ${lowTemp}&#8457;</li>
-                      <li>Average Humidity: ${humidity}%</li>
+                      <li>Humidity: ${humidity}%</li>
                   </ul>
                 </div>`;
         forecastHTML += `</div>`;
@@ -90,6 +90,7 @@ function getWeatherForecast(lat, long) {
             })
         })
 };
+
 
 
 function getParkInfo(pCode) {
