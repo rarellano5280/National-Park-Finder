@@ -77,6 +77,14 @@ html{
     margin-right: 60px;
 }
 
+.forecast{
+    background-color: #343734;
+    border-radius: 5px;
+    color: white;
+    margin: 15px;
+    padding:10px;
+    display: inline-flex;
+  }
 
 /*  adding and removing class in JS -
 $('#className').classList.add('hide')
