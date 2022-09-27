@@ -3,9 +3,6 @@ var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1"
 
 var weatherAPIKey = "117a7453ee844f288c7182432222509"
 
-<<<<<<< HEAD
-
-=======
 const parksByState = [
     {state: "AL", parkCode: "liri"},
     {state: "AK", parkCode: "glba"},
@@ -62,7 +59,6 @@ const parksByState = [
 function getWeatherForecast(lat, long) {
     var latitude = lat;
     var longitude = long;
->>>>>>> 9d06896e10288a2d61f3bb3f8b8af04a5eb7b139
     let weatherQueryURL = "https://api.weatherapi.com/v1/forecast.json?key=117a7453ee844f288c7182432222509&q=" + latitude + "," + longitude + "&days=5&aqi=no&alerts=no";
     fetch(weatherQueryURL)
         .then(function (response) {
@@ -92,25 +88,6 @@ function getParkInfo(pCode) {
 $(document).ready(function () {
     $('#map').usmap({});
 });
-
-const parksByState = [
-    {state: "AL", parkCode: "liri"},
-    {state: "AK", parkCode: "glba"},
-    {state: "AZ", parkCode: "grca"},
-    {state: "AR", parkCode: "hosp"},
-    {state: "CA", parkCode: "yose"},
-    {state: "CO", parkCode: "romo"},
-    {state: "CT", parkCode: "appa"},
-    {state: "DE", parkCode: "frst"},
-    {state: "FL", parkCode: "ever"},
-    {state: "GA", parkCode: "chat"},
-    {state: "HI", parkCode: "havo"},
-    {state: "ID", parkCode: "crmo"},
-    {state: "IL", parkCode: "liho"},
-    {state: "IN", parkCode: "indu"},
-    {state: "IA", parkCode: "efmo"},
-    {state: "KS", parkCode: "brvb"}]
-
 
 // lets you click on map to run function
 $('#map').usmap({
