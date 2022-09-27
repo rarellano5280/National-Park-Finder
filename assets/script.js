@@ -65,7 +65,7 @@ function getWeatherForecast(lat, long) {
             return response.json();
         })
         .then(function (data) {
-            console.log("Response Data :" + JSON.stringify(data))
+            console.log("Response Data :", data);
         })
 };
 
