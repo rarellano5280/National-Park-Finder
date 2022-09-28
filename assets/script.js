@@ -114,7 +114,7 @@ var toDoContainer = document.getElementById("thingstodo");
 function thingsToDo(data) {
     console.log(data);
     var toDoTitle = document.createElement("h2");
-    toDoTitle.textContent = "Activities: ";
+    toDoTitle.textContent = "Featured Activities: ";
     var toDoList = document.createElement("ul");
     for (let i = 0; i < 5; i++) {
         var listItems = document.createElement("li");
@@ -129,7 +129,7 @@ var parkinfoContainer = document.getElementById("parkinfo");
 
 function generalInfo(data) {
     var infoTitle = document.createElement("h2");
-    infoTitle.textContent = "General Park Info: ";
+    infoTitle.textContent = data[0].fullName;
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
     var address = document.createElement("li");
@@ -142,6 +142,9 @@ function generalInfo(data) {
     var entranceFees = document.createElement("li");
     entranceFees.textContent = "Entrance Fees: " + data[0].entranceFees[0].description;
     infoList.appendChild(entranceFees);
+    var contact = document.createElement("li");
+    contact.textContent = "Contact Info: ";
+    infoList.appendChild(contact);
     var email = document.createElement("li");
     email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
     infoList.appendChild(email);
