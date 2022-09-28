@@ -77,13 +77,13 @@ function getWeatherForecast(lat, long) {
                 
                 forecastHTML += `
                 <div class="forecast">
-                  <ul class="text-sm list-unstyled">
-                      <li><h5>${new Date(date).toDateString()}</h5></li>
+                    <ul class="text-sm list-unstyled">
+                        <li><h5>${new Date(date).toDateString()}</h5></li>
                         <li><img src="${icon}"></li>
-                      <li>High: ${highTemp}&#8457;</li>
-                      <li>Low: ${lowTemp}&#8457;</li>
-                      <li>Humidity: ${humidity}%</li>
-                  </ul>
+                        <li>High: ${highTemp}&#8457;</li>
+                        <li>Low: ${lowTemp}&#8457;</li>
+                        <li>Humidity: ${humidity}%</li>
+                    </ul>
                 </div>`;
         forecastHTML += `</div>`;
         $('#forecast-container').html(forecastHTML);    
@@ -114,7 +114,7 @@ var toDoContainer = document.getElementById("thingstodo");
 function thingsToDo(data) {
     console.log(data);
     var toDoTitle = document.createElement("h2");
-    toDoTitle.textContent = "Activities to do: ";
+    toDoTitle.textContent = "Featured Activities: ";
     var toDoList = document.createElement("ul");
     for (let i = 0; i < 5; i++) {
         var listItems = document.createElement("li");
@@ -129,19 +129,22 @@ var parkinfoContainer = document.getElementById("parkinfo");
 
 function generalInfo(data) {
     var infoTitle = document.createElement("h2");
-    infoTitle.textContent = "General Park Info: ";
+    infoTitle.textContent = data[0].fullName;
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
     var address = document.createElement("li");
-    address.textContent = data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
+    address.textContent = "Park Address: " + data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
     infoList.appendChild(address);
     var hours = document.createElement("li");
-    hours.textContent = "Monday: " + data[0].operatingHours[0].standardHours.monday + " Tuesday: " + data[0].operatingHours[0].standardHours.tuesday + " Wednesday: " + data[0].operatingHours[0].standardHours.wednesday + " Thursday: " + data[0].operatingHours[0].standardHours.thursday + " Friday: " + data[0].operatingHours[0].standardHours.friday + " Saturday: " + data[0].operatingHours[0].standardHours.saturday + " Sunday: " + data[0].operatingHours[0].standardHours.sunday;
+    hours.textContent = "Park Hours: " + "Monday: " + data[0].operatingHours[0].standardHours.monday + " Tuesday: " + data[0].operatingHours[0].standardHours.tuesday + " Wednesday: " + data[0].operatingHours[0].standardHours.wednesday + " Thursday: " + data[0].operatingHours[0].standardHours.thursday + " Friday: " + data[0].operatingHours[0].standardHours.friday + " Saturday: " + data[0].operatingHours[0].standardHours.saturday + " Sunday: " + data[0].operatingHours[0].standardHours.sunday;
     // hours.textContent = data[0].operatingHours[0].description;
     infoList.appendChild(hours);
     var entranceFees = document.createElement("li");
-    entranceFees.textContent = data[0].entranceFees[0].description;
+    entranceFees.textContent = "Entrance Fees: " + data[0].entranceFees[0].description;
     infoList.appendChild(entranceFees);
+    var contact = document.createElement("li");
+    contact.textContent = "Contact Info: ";
+    infoList.appendChild(contact);
     var email = document.createElement("li");
     email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
     infoList.appendChild(email);
