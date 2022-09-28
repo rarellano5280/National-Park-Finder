@@ -104,8 +104,52 @@ function getParkInfo(pCode) {
             var lat = data.data[0].latitude;
             var long = data.data[0].longitude;
             getWeatherForecast(lat, long);
+            thingsToDo(data.data);
+            generalInfo(data.data);
         })
 };
+
+var toDoContainer = document.getElementById("thingstodo");
+
+function thingsToDo(data) {
+    console.log(data);
+    var toDoTitle = document.createElement("h2");
+    toDoTitle.textContent = "Activities to do: ";
+    var toDoList = document.createElement("ul");
+    for (let i = 0; i < 5; i++) {
+        var listItems = document.createElement("li");
+        listItems.textContent = data[0].activities[i].name;
+        toDoList.appendChild(listItems);
+    }
+    toDoTitle.appendChild(toDoList);
+    toDoContainer.appendChild(toDoTitle);
+}
+
+var parkinfoContainer = document.getElementById("parkinfo");
+
+function generalInfo(data) {
+    var infoTitle = document.createElement("h2");
+    infoTitle.textContent = "General Park Info: ";
+    var infoList = document.createElement("ul");
+    infoTitle.appendChild(infoList);
+    var address = document.createElement("li");
+    address.textContent = data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
+    infoList.appendChild(address);
+    var hours = document.createElement("li");
+    hours.textContent = "Monday: " + data[0].operatingHours[0].standardHours.monday + " Tuesday: " + data[0].operatingHours[0].standardHours.tuesday + " Wednesday: " + data[0].operatingHours[0].standardHours.wednesday + " Thursday: " + data[0].operatingHours[0].standardHours.thursday + " Friday: " + data[0].operatingHours[0].standardHours.friday + " Saturday: " + data[0].operatingHours[0].standardHours.saturday + " Sunday: " + data[0].operatingHours[0].standardHours.sunday;
+    // hours.textContent = data[0].operatingHours[0].description;
+    infoList.appendChild(hours);
+    var entranceFees = document.createElement("li");
+    entranceFees.textContent = data[0].entranceFees[0].description;
+    infoList.appendChild(entranceFees);
+    var email = document.createElement("li");
+    email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
+    infoList.appendChild(email);
+    var phone = document.createElement("li");
+    phone.textContent = "Phone: " + data[0].contacts.phoneNumbers[0].phoneNumber;
+    infoList.appendChild(phone);
+    parkinfoContainer.appendChild(infoTitle);
+}
 
 // pulls map up
 $(document).ready(function () {
