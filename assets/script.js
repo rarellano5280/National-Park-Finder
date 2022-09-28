@@ -2,56 +2,56 @@ var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1"
 var weatherAPIKey = "117a7453ee844f288c7182432222509"
 
 const parksByState = [
-    {state: "AL", parkCode: "liri"},
-    {state: "AK", parkCode: "glba"},
-    {state: "AZ", parkCode: "grca"},
-    {state: "AR", parkCode: "hosp"},
-    {state: "CA", parkCode: "yose"},
-    {state: "CO", parkCode: "romo"},
-    {state: "CT", parkCode: "appa"},
-    {state: "DE", parkCode: "frst"},
-    {state: "FL", parkCode: "ever"},
-    {state: "GA", parkCode: "chat"},
-    {state: "HI", parkCode: "havo"},
-    {state: "ID", parkCode: "crmo"},
-    {state: "IL", parkCode: "liho"},
-    {state: "IN", parkCode: "indu"},
-    {state: "IA", parkCode: "efmo"},
-    {state: "KS", parkCode: "brvb"},
-    {state: "KY", parkCode: "maca"},
-    {state: "LA", parkCode: "cari"},
-    {state: "ME", parkCode: "acad"},
-    {state: "MD", parkCode: "fomc"},
-    {state: "MA", parkCode: "bost"},
-    {state: "MI", parkCode: "piro"},
-    {state: "MN", parkCode: "voya"},
-    {state: "MS", parkCode: "guis"},
-    {state: "MO", parkCode: "jeff"},
-    {state: "MT", parkCode: "glac"},
-    {state: "NE", parkCode: "scbl"},
-    {state: "NV", parkCode: "lake"},
-    {state: "NH", parkCode: "saga"},
-    {state: "NJ", parkCode: "gate"},
-    {state: "NM", parkCode: "azru"},
-    {state: "NY", parkCode: "sara"},
-    {state: "NC", parkCode: "grsm"},
-    {state: "ND", parkCode: "thro"},
-    {state: "OH", parkCode: "cuva"},
-    {state: "OK", parkCode: "chic"},
-    {state: "OR", parkCode: "orca"},
-    {state: "PA", parkCode: "inde"},
-    {state: "RI", parkCode: "blrv"},
-    {state: "SC", parkCode: "cong"},
-    {state: "SD", parkCode: "wica"},
-    {state: "TN", parkCode: "grsm"},
-    {state: "TX", parkCode: "gumo"},
-    {state: "UT", parkCode: "zion"},
-    {state: "VT", parkCode: "mabi"},
-    {state: "VA", parkCode: "blri"},
-    {state: "WA", parkCode: "olym"},
-    {state: "WV", parkCode: "neri"},
-    {state: "WI", parkCode: "apis"},
-    {state: "WY", parkCode: "yell"},
+    { state: "AL", parkCode: "liri" },
+    { state: "AK", parkCode: "glba" },
+    { state: "AZ", parkCode: "grca" },
+    { state: "AR", parkCode: "hosp" },
+    { state: "CA", parkCode: "yose" },
+    { state: "CO", parkCode: "romo" },
+    { state: "CT", parkCode: "appa" },
+    { state: "DE", parkCode: "frst" },
+    { state: "FL", parkCode: "ever" },
+    { state: "GA", parkCode: "chat" },
+    { state: "HI", parkCode: "havo" },
+    { state: "ID", parkCode: "crmo" },
+    { state: "IL", parkCode: "liho" },
+    { state: "IN", parkCode: "indu" },
+    { state: "IA", parkCode: "efmo" },
+    { state: "KS", parkCode: "brvb" },
+    { state: "KY", parkCode: "maca" },
+    { state: "LA", parkCode: "cari" },
+    { state: "ME", parkCode: "acad" },
+    { state: "MD", parkCode: "fomc" },
+    { state: "MA", parkCode: "bost" },
+    { state: "MI", parkCode: "piro" },
+    { state: "MN", parkCode: "voya" },
+    { state: "MS", parkCode: "guis" },
+    { state: "MO", parkCode: "jeff" },
+    { state: "MT", parkCode: "glac" },
+    { state: "NE", parkCode: "scbl" },
+    { state: "NV", parkCode: "lake" },
+    { state: "NH", parkCode: "saga" },
+    { state: "NJ", parkCode: "gate" },
+    { state: "NM", parkCode: "azru" },
+    { state: "NY", parkCode: "sara" },
+    { state: "NC", parkCode: "grsm" },
+    { state: "ND", parkCode: "thro" },
+    { state: "OH", parkCode: "cuva" },
+    { state: "OK", parkCode: "chic" },
+    { state: "OR", parkCode: "orca" },
+    { state: "PA", parkCode: "inde" },
+    { state: "RI", parkCode: "blrv" },
+    { state: "SC", parkCode: "cong" },
+    { state: "SD", parkCode: "wica" },
+    { state: "TN", parkCode: "grsm" },
+    { state: "TX", parkCode: "gumo" },
+    { state: "UT", parkCode: "zion" },
+    { state: "VT", parkCode: "mabi" },
+    { state: "VA", parkCode: "blri" },
+    { state: "WA", parkCode: "olym" },
+    { state: "WV", parkCode: "neri" },
+    { state: "WI", parkCode: "apis" },
+    { state: "WY", parkCode: "yell" },
 ]
 
 function getWeatherForecast(lat, long) {
@@ -67,26 +67,26 @@ function getWeatherForecast(lat, long) {
             let forecastHTML = `
             <h3>5-Day Forecast:</h3>
             <div ml-10></div>`;
-            data.forecast.forecastday.forEach((dayOfWeek)=>{
+            data.forecast.forecastday.forEach((dayOfWeek) => {
                 console.log(dayOfWeek);
                 var date = dayOfWeek.date;
                 var icon = dayOfWeek.day.condition.icon;
                 var humidity = dayOfWeek.day.avghumidity;
                 var highTemp = dayOfWeek.day.maxtemp_f;
                 var lowTemp = dayOfWeek.day.mintemp_f;
-                
+
                 forecastHTML += `
                 <div class="forecast">
                   <ul class="text-sm list-unstyled">
                       <li><h5>${new Date(date).toDateString()}</h5></li>
-                        <li><img src="${icon}"></li>
+                        <li><img src="https:${icon}"></li>
                       <li>High: ${highTemp}&#8457;</li>
                       <li>Low: ${lowTemp}&#8457;</li>
                       <li>Humidity: ${humidity}%</li>
                   </ul>
                 </div>`;
-        forecastHTML += `</div>`;
-        $('#forecast-container').html(forecastHTML);    
+                forecastHTML += `</div>`;
+                $('#forecast-container').html(forecastHTML);
             })
         })
 };
@@ -116,7 +116,7 @@ function thingsToDo(data) {
     var toDoTitle = document.createElement("h2");
     toDoTitle.textContent = "Activities to do: ";
     var toDoList = document.createElement("ul");
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 4; i++) {
         var listItems = document.createElement("li");
         listItems.textContent = data[0].activities[i].name;
         toDoList.appendChild(listItems);
@@ -135,13 +135,21 @@ function generalInfo(data) {
     var address = document.createElement("li");
     address.textContent = data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
     infoList.appendChild(address);
-    var hours = document.createElement("li");
-    hours.textContent = "Monday: " + data[0].operatingHours[0].standardHours.monday + " Tuesday: " + data[0].operatingHours[0].standardHours.tuesday + " Wednesday: " + data[0].operatingHours[0].standardHours.wednesday + " Thursday: " + data[0].operatingHours[0].standardHours.thursday + " Friday: " + data[0].operatingHours[0].standardHours.friday + " Saturday: " + data[0].operatingHours[0].standardHours.saturday + " Sunday: " + data[0].operatingHours[0].standardHours.sunday;
-    // hours.textContent = data[0].operatingHours[0].description;
-    infoList.appendChild(hours);
+    
+    var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: " , "Sunday: "];
+    
+    for (var i = 0; i < dayTitleArray.length; i++) {
+        var dayArray = [data[0].operatingHours[0].standardHours.monday, data[0].operatingHours[0].standardHours.tuesday, data[0].operatingHours[0].standardHours.wednesday, data[0].operatingHours[0].standardHours.thursday, data[0].operatingHours[0].standardHours.friday, data[0].operatingHours[0].standardHours.saturday, data[0].operatingHours[0].standardHours.sunday];
+        var hours = document.createElement("li");
+        hours.textContent = dayTitleArray[i] + dayArray[i];
+        // hours.textContent = data[0].operatingHours[0].description;
+        infoList.appendChild(hours);
+    }
+    if (data[0].states !== "GA") {
     var entranceFees = document.createElement("li");
     entranceFees.textContent = data[0].entranceFees[0].description;
     infoList.appendChild(entranceFees);
+    };
     var email = document.createElement("li");
     email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
     infoList.appendChild(email);
@@ -168,6 +176,9 @@ $('#map').usmap({
                 var pCode = parksByState[i].parkCode;
                 getParkInfo(pCode);
             }
-        }},
-    });
+        };
+        $(parkinfoContainer).empty();
+        $(toDoContainer).empty();
+    },
+});
 
