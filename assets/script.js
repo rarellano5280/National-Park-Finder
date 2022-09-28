@@ -130,6 +130,9 @@ var parkinfoContainer = document.getElementById("parkinfo");
 function generalInfo(data) {
     var infoTitle = document.createElement("h2");
     infoTitle.textContent = data[0].fullName;
+    var img = document.createElement("img");
+    img.setAttribute("src", "data[0].images[0]");
+    infoTitle.appendChild(img);
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
     var address = document.createElement("li");
