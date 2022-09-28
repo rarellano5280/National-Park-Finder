@@ -114,7 +114,7 @@ var toDoContainer = document.getElementById("thingstodo");
 function thingsToDo(data) {
     console.log(data);
     var toDoTitle = document.createElement("h2");
-    toDoTitle.textContent = "Activities to do: ";
+    toDoTitle.textContent = "Featured Activities: ";
     var toDoList = document.createElement("ul");
     for (let i = 0; i < 4; i++) {
         var listItems = document.createElement("li");
@@ -129,11 +129,11 @@ var parkinfoContainer = document.getElementById("parkinfo");
 
 function generalInfo(data) {
     var infoTitle = document.createElement("h2");
-    infoTitle.textContent = "General Park Info: ";
+    infoTitle.textContent = data[0].fullName;
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
     var address = document.createElement("li");
-    address.textContent = data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
+    address.textContent = "Park Address: " + data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
     infoList.appendChild(address);
     
     var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: " , "Sunday: "];
@@ -147,7 +147,7 @@ function generalInfo(data) {
     }
     if (data[0].states !== "GA") {
     var entranceFees = document.createElement("li");
-    entranceFees.textContent = data[0].entranceFees[0].description;
+    entranceFees.textContent = "Entrance Fees: " + data[0].entranceFees[0].description;
     infoList.appendChild(entranceFees);
     };
     var email = document.createElement("li");
