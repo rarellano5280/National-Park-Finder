@@ -9,7 +9,7 @@ html{
 
 .hero{
     position: relative;
-    height: 400px;
+    height: 230px;
     overflow: hidden;
     background: url("../images/bg-glacier.jpeg") center no-repeat;
     background-image: center no-repeat;
@@ -70,6 +70,21 @@ html{
 .hide{
     display:none;
 }
+
+#map{
+    justify-content: right;
+    margin: auto;
+    margin-right: 60px;
+}
+
+.forecast{
+    background-color: #343734;
+    border-radius: 5px;
+    color: white;
+    margin: 15px;
+    padding:10px;
+    display: inline-flex;
+  }
 
 /*  adding and removing class in JS -
 $('#className').classList.add('hide')

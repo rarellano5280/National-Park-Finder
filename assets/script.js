@@ -1,6 +1,4 @@
 var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1"
-//https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1
-
 var weatherAPIKey = "117a7453ee844f288c7182432222509"
 
 const parksByState = [
@@ -66,8 +64,33 @@ function getWeatherForecast(lat, long) {
         })
         .then(function (data) {
             console.log("Response Data :", data);
+            let forecastHTML = `
+            <h3>5-Day Forecast:</h3>
+            <div ml-10></div>`;
+            data.forecast.forecastday.forEach((dayOfWeek)=>{
+                console.log(dayOfWeek);
+                var date = dayOfWeek.date;
+                var icon = dayOfWeek.day.condition.icon;
+                var humidity = dayOfWeek.day.avghumidity;
+                var highTemp = dayOfWeek.day.maxtemp_f;
+                var lowTemp = dayOfWeek.day.mintemp_f;
+                
+                forecastHTML += `
+                <div class="forecast">
+                  <ul class="text-sm list-unstyled">
+                      <li><h5>${new Date(date).toDateString()}</h5></li>
+                        <li><img src="${icon}"></li>
+                      <li>High: ${highTemp}&#8457;</li>
+                      <li>Low: ${lowTemp}&#8457;</li>
+                      <li>Humidity: ${humidity}%</li>
+                  </ul>
+                </div>`;
+        forecastHTML += `</div>`;
+        $('#forecast-container').html(forecastHTML);    
+            })
         })
 };
+
 
 
 function getParkInfo(pCode) {
