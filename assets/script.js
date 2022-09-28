@@ -131,7 +131,7 @@ function generalInfo(data) {
     var infoTitle = document.createElement("h2");
     infoTitle.textContent = data[0].fullName;
     var img = document.createElement("img");
-    img.setAttribute("src", "https:data[0].images[0]");
+    img.setAttribute("src", data[0].images[0].url);
     infoTitle.appendChild(img);
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
@@ -148,11 +148,14 @@ function generalInfo(data) {
         // hours.textContent = data[0].operatingHours[0].description;
         infoList.appendChild(hours);
     }
-    if (data[0].states !== "GA") {
-    var entranceFees = document.createElement("li");
+    if (data[0].states == "GA" || data[0].states == "AR") {
+        
+    } else {
+        var entranceFees = document.createElement("li");
     entranceFees.textContent = "Entrance Fees: " + data[0].entranceFees[0].description;
     infoList.appendChild(entranceFees);
     };
+
     var email = document.createElement("li");
     email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
     infoList.appendChild(email);
