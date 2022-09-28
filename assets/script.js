@@ -65,7 +65,7 @@ function getWeatherForecast(lat, long) {
         .then(function (data) {
             console.log("Response Data :", data);
             let forecastHTML = `
-            <h3>5-Day Forecast:</h3>
+            <h3>5-Day Forecast</h3>
             <div ml-10></div>`;
             data.forecast.forecastday.forEach((dayOfWeek) => {
                 console.log(dayOfWeek);
@@ -126,13 +126,22 @@ function thingsToDo(data) {
 }
 
 var parkinfoContainer = document.getElementById("parkinfo");
+var parkdataContainer = document.getElementById("parkdata");
+
 
 function generalInfo(data) {
-    var infoTitle = document.createElement("h2");
-    infoTitle.textContent = data[0].fullName;
+
+    var infoBox = document.createElement("h2");
+    infoBox.textContent = data[0].fullName;
     var img = document.createElement("img");
     img.setAttribute("src", data[0].images[0].url);
-    infoTitle.appendChild(img);
+    infoBox.appendChild(img);
+    parkdataContainer.appendChild(infoBox);
+
+    var infoTitle = document.createElement("h2");
+
+
+
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
     var address = document.createElement("li");
@@ -152,7 +161,7 @@ function generalInfo(data) {
         
     } else {
         var entranceFees = document.createElement("li");
-    entranceFees.textContent = "Entrance Fees: " + data[0].entranceFees[0].description;
+    entranceFees.textContent = "Entrance Fees: $" + data[0].entranceFees[0].cost;
     infoList.appendChild(entranceFees);
     };
 
@@ -200,6 +209,7 @@ $('#map').usmap({
             }
         };
         $(parkinfoContainer).empty();
+        $(parkdataContainer).empty();
         $(toDoContainer).empty();
     },
 });
