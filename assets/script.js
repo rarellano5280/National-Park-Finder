@@ -163,8 +163,24 @@ function generalInfo(data) {
     phone.textContent = "Phone: " + data[0].contacts.phoneNumbers[0].phoneNumber;
     infoList.appendChild(phone);
     parkinfoContainer.appendChild(infoTitle);
-}
+};
 
+var saveSearch = function(newSearch){
+    let repeat = false;
+  // Check if search in local storage
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage["parks" + i] === newSearch) {
+            repeat = true;
+            break;
+        }
+    }
+  // Save to localStorage if search is new
+    if (repeat === false) {
+        localStorage.setItem('parks' + localStorage.length, newSearch);
+    }
+  }
+  
+ 
 // pulls map up
 $(document).ready(function () {
     $('#map').usmap({});
