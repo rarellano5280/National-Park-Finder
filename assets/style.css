@@ -47,7 +47,8 @@ html{
     color: white;
 }
 
-.resources{
+.resources,
+.contributors{
     color: white;
     cursor: pointer;
     outline: none;
@@ -57,9 +58,11 @@ html{
     border-radius: 20px;
     transition: 0.1s all;
     text-shadow: 0 0 10px black;
+
 }
 
-.resources:hover{
+.resources:hover,
+.contributors:hover{
     text-decoration: none;
     color: inherit;
     box-shadow: 0 0 1.5rem white;
