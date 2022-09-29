@@ -167,7 +167,7 @@ function generalInfo(data) {
     infoBox.textContent = data[0].fullName;
 
     var img = document.createElement("img");
-    img.setAttribute("style","background-color: salmon; color: white; width: 500px; height: 500px;");
+    img.setAttribute("style","width: 600px; height: 550px;");
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
