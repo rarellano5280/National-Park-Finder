@@ -106,9 +106,8 @@ function getParkInfo(pCode) {
             getWeatherForecast(lat, long);
             thingsToDo(data.data);
             generalInfo(data.data);
-
             var saveSearch = function(park){
-                var park = data.data[0].name
+                var park = data.data[0].name;
                 console.log(data.data[0].name);
                 let repeat = false;
               // Check if search in local storage
@@ -120,7 +119,7 @@ function getParkInfo(pCode) {
                 }
               // Save to localStorage if search is new
                 if (repeat === false) {
-                    localStorage.setItem('park' + park);
+                    localStorage.setItem('parks' + localStorage.length, park);
                     
             }};
             saveSearch(data.data[0].name);
