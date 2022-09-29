@@ -18,3 +18,29 @@ h1::after{
     width: 150px;
     margin: 10px auto;
 }
+ .profile{
+    margin-top: 25px;
+ }
+
+ .profile .img-box{
+    opacity: 1;
+    display: block;
+    position: relative;
+ }
+
+ .profile h2{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+ }
+
+ .img-box::after{
+    content: 0;
+    opacity: 0;
+    background-color: rgba(0,0,0,0,6);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+ }

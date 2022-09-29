@@ -49,6 +49,7 @@ html{
 
 .resources,
 .contributors{
+    padding: 5px;
     color: white;
     cursor: pointer;
     outline: none;
