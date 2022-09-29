@@ -167,6 +167,7 @@ function generalInfo(data) {
     infoBox.textContent = data[0].fullName;
 
     var img = document.createElement("img");
+    img.setAttribute("style","background-color: salmon; color: white; width: 500px; height: 500px;");
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
@@ -204,6 +205,9 @@ function generalInfo(data) {
     phone.textContent = "Phone: " + data[0].contacts.phoneNumbers[0].phoneNumber;
     infoList.appendChild(phone);
     parkinfoContainer.appendChild(infoTitle);
+
+     
+
 };
 
 // pulls map up
@@ -229,4 +233,6 @@ $('#map').usmap({
         $(toDoContainer).empty();
     },
 });
+
+
 
