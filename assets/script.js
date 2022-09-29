@@ -134,6 +134,7 @@ function generalInfo(data) {
     var infoBox = document.createElement("h1");
     infoBox.textContent = data[0].fullName;
     var img = document.createElement("img");
+    img.setAttribute("style","background-color: salmon; color: white; width: 500px; height: 500px;");
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
@@ -173,6 +174,9 @@ function generalInfo(data) {
     phone.textContent = "Phone: " + data[0].contacts.phoneNumbers[0].phoneNumber;
     infoList.appendChild(phone);
     parkinfoContainer.appendChild(infoTitle);
+
+     
+
 };
 
 var saveSearch = function(newSearch){
@@ -214,4 +218,6 @@ $('#map').usmap({
         $(toDoContainer).empty();
     },
 });
+
+
 
