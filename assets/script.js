@@ -106,6 +106,23 @@ function getParkInfo(pCode) {
             getWeatherForecast(lat, long);
             thingsToDo(data.data);
             generalInfo(data.data);
+            var saveSearch = function(park){
+                var park = data.data[0].name
+                console.log(data.data[0].name);
+                let repeat = false;
+              // Check if search in local storage
+                for (let i = 0; i < localStorage.length; i++) {
+                    if (localStorage["parks" + i] === park) {
+                        repeat = true;
+                        break;
+                    }
+                }
+              // Save to localStorage if search is new
+                if (repeat === false) {
+                    localStorage.setItem('park' + park);
+                    
+            }};
+            saveSearch(data.name);
         })
 };
 
@@ -128,11 +145,27 @@ function thingsToDo(data) {
 var parkinfoContainer = document.getElementById("parkinfo");
 var parkdataContainer = document.getElementById("parkdata");
 
+    // save to local storage
+var saveSearch = function(newSearch){
+        let repeat = false;
+      // Check if search in local storage
+        for (let i = 0; i < localStorage.length; i++) {
+            if (localStorage["parks" + i] === newSearch) {
+                repeat = true;
+                break;
+            }
+        }
+      // Save to localStorage if search is new
+        if (repeat === false) {
+            localStorage.setItem('parks' + localStorage.length, newSearch);
+            
+    }};
 
 function generalInfo(data) {
 
     var infoBox = document.createElement("h1");
     infoBox.textContent = data[0].fullName;
+
     var img = document.createElement("img");
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
@@ -185,7 +218,6 @@ $('#map').usmap({
     click: function (event, data) {
         // Output the abbreviation of the state name to the console
         console.log(data.name);
-        localStorage.setItem("state", data.name);
         for (var i = 0; i < parksByState.length; i++) {
             if (data.name == parksByState[i].state) {
                 var pCode = parksByState[i].parkCode;
