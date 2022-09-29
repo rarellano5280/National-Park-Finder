@@ -144,10 +144,8 @@ function generalInfo(data) {
 
     var infoTitle = document.createElement("h4");
 
-
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
-   
     
     var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: " , "Sunday: "];
     
@@ -175,22 +173,6 @@ function generalInfo(data) {
     parkinfoContainer.appendChild(infoTitle);
 };
 
-var saveSearch = function(newSearch){
-    let repeat = false;
-  // Check if search in local storage
-    for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage["parks" + i] === newSearch) {
-            repeat = true;
-            break;
-        }
-    }
-  // Save to localStorage if search is new
-    if (repeat === false) {
-        localStorage.setItem('parks' + localStorage.length, newSearch);
-    }
-  }
-  
- 
 // pulls map up
 $(document).ready(function () {
     $('#map').usmap({});
@@ -203,6 +185,7 @@ $('#map').usmap({
     click: function (event, data) {
         // Output the abbreviation of the state name to the console
         console.log(data.name);
+        localStorage.setItem("state", data.name);
         for (var i = 0; i < parksByState.length; i++) {
             if (data.name == parksByState[i].state) {
                 var pCode = parksByState[i].parkCode;
