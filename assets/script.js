@@ -77,13 +77,13 @@ function getWeatherForecast(lat, long) {
 
                 forecastHTML += `
                 <div class="forecast">
-                  <ul class="text-sm list-unstyled">
-                      <li><h5>${new Date(date).toDateString()}</h5></li>
-                        <li><img src="https:${icon}"></li>
-                      <li>High: ${highTemp}&#8457;</li>
-                      <li>Low: ${lowTemp}&#8457;</li>
-                      <li>Humidity: ${humidity}%</li>
-                  </ul>
+                <ul class="text-sm list-unstyled">
+                <li><h5>${new Date(date).toDateString()}</h5></li>
+                <li><img src="https:${icon}"></li>
+                <li>High: ${highTemp}&#8457;</li>
+                <li>Low: ${lowTemp}&#8457;</li>
+                <li>Humidity: ${humidity}%</li>
+                </ul>
                 </div>`;
                 forecastHTML += `</div>`;
                 $('#forecast-container').html(forecastHTML);
