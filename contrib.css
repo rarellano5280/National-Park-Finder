@@ -7,12 +7,12 @@ h1{
     font-weight: bold;
     letter-spacing: 2px;
     color: black;
-    padding: 10px;
+    padding-bottom: 10px;
 }
 
-h1::after{
+h1:after{
     content:'';
-    background: black;
+    background:#007bff;
     display: block;
     height: 3px;
     width: 150px;
@@ -21,11 +21,16 @@ h1::after{
  .profile{
     margin-top: 25px;
  }
-
+ 
  .profile .img-box{
+    border:2px solid #fff;
     opacity: 1;
     display: block;
     position: relative;
+    box-shadow: 10px 10px 5px #ccc;
+ -moz-box-shadow: 10px 10px 5px #ccc;
+ -webkit-box-shadow: 10px 10px 5px #ccc;
+ -khtml-box-shadow: 10px 10px 5px #ccc;
  }
 
  .profile h2{
@@ -34,13 +39,41 @@ h1::after{
     margin-top: 15px;
  }
 
- .img-box::after{
-    content: 0;
-    opacity: 0;
-    background-color: rgba(0,0,0,0,6);
+ .img-box ul{
+    margin: 0;
+    padding: 20px 0;
     position: absolute;
-    right: 0;
-    left: 0;
-    top: 0;
+    z-index: 1;
     bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-45%);
+    opacity: 0;
+ }
+
+ .img-box ul li{
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 7px;
+    display: inline-block;
+ }
+
+ .img-box a{
+    color: white;
+ }
+
+ .img-box:hover::after{
+    opacity: 1;
+ }
+
+ .img-box:hover ul{
+    opacity: 1;
+ }
+
+ .img-box a:hover li{
+    color: #007bff;
+    border: 1px solid #007bff ;
  }
