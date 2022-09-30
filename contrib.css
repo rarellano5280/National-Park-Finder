@@ -1,0 +1,79 @@
+.team{
+    margin: 75px 0;
+}
+
+h1{
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: black;
+    padding-bottom: 10px;
+}
+
+h1:after{
+    content:'';
+    background:#007bff;
+    display: block;
+    height: 3px;
+    width: 150px;
+    margin: 10px auto;
+}
+ .profile{
+    margin-top: 25px;
+ }
+ 
+ .profile .img-box{
+    border:2px solid #fff;
+    opacity: 1;
+    display: block;
+    position: relative;
+    box-shadow: 10px 10px 5px #ccc;
+ -moz-box-shadow: 10px 10px 5px #ccc;
+ -webkit-box-shadow: 10px 10px 5px #ccc;
+ -khtml-box-shadow: 10px 10px 5px #ccc;
+ }
+
+ .profile h2{
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 15px;
+ }
+
+ .img-box ul{
+    margin: 0;
+    padding: 20px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    display: block;
+    left: 50%;
+    transform: translateX(-45%);
+    opacity: 0;
+ }
+
+ .img-box ul li{
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 3px;
+    padding: 7px;
+    display: inline-block;
+ }
+
+ .img-box a{
+    color: white;
+ }
+
+ .img-box:hover::after{
+    opacity: 1;
+ }
+
+ .img-box:hover ul{
+    opacity: 1;
+ }
+
+ .img-box a:hover li{
+    color: #007bff;
+    border: 1px solid #007bff ;
+ }
