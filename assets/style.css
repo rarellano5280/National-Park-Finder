@@ -34,6 +34,7 @@ html{
 }
 
 .container h1 span{
+    border-radius: 15px;
     border: 10px solid white;
     padding: 6px 14px;
     display: inline-block;
@@ -98,4 +99,14 @@ html{
 
 img{
     border-radius:15px;
+}
+
+@media (max-width: 600px){
+    #parkinfo, #thingstodo, #contactinfo{
+        text-align: center;
+    }
+
+    .container{
+        width: 100%;
+    }
 }

@@ -1,6 +1,11 @@
-var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1"
-var weatherAPIKey = "117a7453ee844f288c7182432222509"
+// variables set
+var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1";
+var weatherAPIKey = "117a7453ee844f288c7182432222509";
+var parkinfoContainer = document.getElementById("parkinfo");
+var parkdataContainer = document.getElementById("parkdata");
+var contactContainer = document.getElementById("contactinfo");
 
+// array of park data
 const parksByState = [
     { state: "AL", parkCode: "liri" },
     { state: "AK", parkCode: "glba" },
@@ -52,7 +57,7 @@ const parksByState = [
     { state: "WV", parkCode: "neri" },
     { state: "WI", parkCode: "apis" },
     { state: "WY", parkCode: "yell" },
-]
+];
 
 function getWeatherForecast(lat, long) {
     var latitude = lat;
@@ -151,9 +156,7 @@ function thingsToDo(data) {
     };
 }
 
-var parkinfoContainer = document.getElementById("parkinfo");
-var parkdataContainer = document.getElementById("parkdata");
-var contactContainer = document.getElementById("contactinfo");
+
 
 // save to local storage
 var saveSearch = function (newSearch) {
@@ -171,6 +174,8 @@ var saveSearch = function (newSearch) {
 
     }
 };
+
+
 
 function generalInfo(data) {
 
