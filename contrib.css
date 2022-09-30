@@ -1,23 +1,29 @@
 .team{
     margin: 75px 0;
 }
-
-h1{
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: black;
-    padding-bottom: 10px;
+.container{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: black;
+   font-weight: 200;
+   text-transform: uppercase;
 }
 
-h1:after{
-    content:'';
-    background:#007bff;
-    display: block;
-    height: 3px;
-    width: 150px;
-    margin: 10px auto;
+.container h1{
+   font-size: 40px;
+   letter-spacing: 0.4rem;
+   margin: 0;
 }
+
+.container h1 span{
+   border: 5px solid black;
+   padding: 6px 14px;
+   display: inline-block;
+}
+
  .profile{
     margin-top: 25px;
  }
@@ -77,3 +83,4 @@ h1:after{
     color: #007bff;
     border: 1px solid #007bff ;
  }
+
