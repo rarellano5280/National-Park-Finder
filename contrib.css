@@ -75,3 +75,11 @@
     opacity: 1;
  }
 
+ .img-box:hover ul{
+    opacity: 1;
+ }
+
+ .img-box a:hover li{
+    color: #007bff;
+    border: 1px solid #007bff ;
+ }
