@@ -38,15 +38,15 @@ Together we were able to create a webpage that allows a user to click on an inte
 
 
 # Usage 
-* If the user views the top of the page they will be able view our header and resources link that will navigate to a webpage that provides additional resources
+* When the user views the top of the page they will see our header with links to additional resources and a contributors page.
+![header with links](assets/images/header.png)
 * The user can then navigate down and they will be presented with a map of the United States. 
+![header with nav bar](assets/images/map.png)
 * If the user hovers over the map they will find that this map is interactive and clickable.
-* When the user clicks on the map they will be presented with a famous national park from that selected state, they will also be presented with park information, and weather from the selected state . 
-* These events will be saved to local storage. 
+* When the user clicks on the map they will be presented with a famous national park from that selected state, they will also be presented with park information and a 5 day forecast for the area.
+![header with nav bar](assets/images/data.png)
+* The name of the park they selected will be saved to local storage. 
 * The user can click on a different state to overide their current selection. 
-
-
-# Webpage Preview 
 
 # Authors
 * Robert Arellano
