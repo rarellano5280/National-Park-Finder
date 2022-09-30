@@ -77,13 +77,13 @@ function getWeatherForecast(lat, long) {
 
                 forecastHTML += `
                 <div class="forecast">
-                  <ul class="text-sm list-unstyled">
-                      <li><h5>${new Date(date).toDateString()}</h5></li>
-                        <li><img src="https:${icon}"></li>
-                      <li>High: ${highTemp}&#8457;</li>
-                      <li>Low: ${lowTemp}&#8457;</li>
-                      <li>Humidity: ${humidity}%</li>
-                  </ul>
+                <ul class="text-sm list-unstyled">
+                <li><h5>${new Date(date).toDateString()}</h5></li>
+                <li><img src="https:${icon}"></li>
+                <li>High: ${highTemp}&#8457;</li>
+                <li>Low: ${lowTemp}&#8457;</li>
+                <li>Humidity: ${humidity}%</li>
+                </ul>
                 </div>`;
                 forecastHTML += `</div>`;
                 $('#forecast-container').html(forecastHTML);
@@ -169,7 +169,11 @@ function generalInfo(data) {
     infoBox.textContent = data[0].fullName;
 
     var img = document.createElement("img");
+<<<<<<< HEAD
     img.setAttribute("style", "background-color: salmon; color: white; width: 500px; height: 500px;");
+=======
+    img.setAttribute("style","width: 600px; height: 550px;");
+>>>>>>> 5837a63c8ed7d8385b5004afa89c28b7b9d2f46a
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
