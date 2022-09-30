@@ -83,27 +83,10 @@ html{
 
 .forecast{
     background-color: #34373474;
-    border-radius: 5px;
+    border-radius: 15px;
     color: white;
     margin: 15px;
     padding:10px;
     display: inline-flex;
   }
-
-  @media screen and (max-width: 1279px) {
-    .my-element {
-        
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-element {
-
-    }
-  }
-
-/*  adding and removing class in JS -
-$('#className').classList.add('hide')
-$('#className').classList.remove('hide') */
-
 
