@@ -4,6 +4,7 @@ var weatherAPIKey = "117a7453ee844f288c7182432222509";
 var parkinfoContainer = document.getElementById("parkinfo");
 var parkdataContainer = document.getElementById("parkdata");
 var contactContainer = document.getElementById("contactinfo");
+var dataEl = document.querySelector("#data");
 
 // array of park data
 const parksByState = [
@@ -238,6 +239,7 @@ $('#map').usmap({
                 getParkInfo(pCode);
             }
         };
+        dataEl.classList.remove("hide");
         $(parkinfoContainer).empty();
         $(parkdataContainer).empty();
         $(toDoContainer).empty();

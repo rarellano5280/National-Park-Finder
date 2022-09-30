@@ -76,12 +76,7 @@ html{
     display:none;
 }
 
-#map{
-    justify-content: right;
-    margin: auto;
-    margin-right: 60px;
-}
-
+/* formats forecast days */
 .forecast{
     background-color: #34373474;
     border-radius: 15px;
@@ -91,16 +86,19 @@ html{
     display: inline-flex;
   }
 
+  /* rounds corners & adds shadow and margin */
 #parkdata, #parkinfo, #thingstodo, #contactinfo, #forecast-container{
     border-radius: 15px;
     Box-shadow:0 10px 20px rgba(208, 189, 189, 0.12), 0 6px 6px rgba(123, 118, 118, 0.12);
     margin-bottom: 20px;
 }
 
+/* rounds image corners */
 img{
     border-radius:15px;
 }
 
+/* makes header and data boxes responsive */
 @media (max-width: 600px){
     #parkinfo, #thingstodo, #contactinfo{
         text-align: center;
