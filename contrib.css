@@ -18,6 +18,31 @@ h1:after{
     width: 150px;
     margin: 10px auto;
 }
+
+.container{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-align: center;
+   color: black;
+   font-weight: 200;
+   text-transform: uppercase;
+}
+
+.container h1{
+   font-size: 40px;
+   letter-spacing: 0.4rem;
+   margin: 0;
+}
+
+.container h1 span{
+   border: 5px solid black;
+   padding: 6px 14px;
+   display: inline-block;
+}
+
+
  .profile{
     margin-top: 25px;
  }
@@ -77,3 +102,4 @@ h1:after{
     color: #007bff;
     border: 1px solid #007bff ;
  }
+
