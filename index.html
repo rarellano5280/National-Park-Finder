@@ -12,42 +12,44 @@
 </head>
 
 <body>
-    <div class="hero" class="mb-5">
+
+<!-- header image and links -->
+    <header class="hero" class="mb-5 mr-0 is-full-mobile">
         <div class="container">
             <h1><span>xplor</span></h1>
             <span class="title">National Park Finder</span>
             <a class="resources" href="https://www.nps.gov/planyourvisit/index.htm">Resources</a>
             <a class="contributors" href="./contrib.html">Contributors</a>
         </div>
-    </div>
+    </header>
 
-    <main class="is-mobile">
+    <main class="is-full-mobile is-full-tablet">
+
+<!-- box with directions for user -->
         <div id="tagline" class="box column is-2 is-offset-5 has-text-centered mt-5">
             <h1 class="content is-large">Select a State</h1>
             <p>Click on a state to unlock details on it's most popular national park.</p>
             <p>Use the resources link above for help planning your trip.</p>
         </div>
 
+<!-- map -->
         <div class="column is-6 is-offset-3">
             <div id="map" style="height: 1000px"></div>
         </div>
 
-        <div id="search-history">
-            <div id="recent-searches"></div>
-        </div>
-    </main>
-    <main>
-    
-        <div> 
-            <div id="forecast-container" style="float:right" class ="box column is-7 has-text-centered"></div>
-        </div>
-
-        <div> 
-                <div id="parkdata" style="float:left" class="box column is-5 has-text-centered"></div>
-                <div id="parkinfo" style="float:left" class="box column is-4"></div>
-                <div id="thingstodo" style="float:left" class="box column is-3"></div>
-                <div id="contactinfo" style="float:left" class="box column is-3"></div>
-            </div> 
+<!-- park data - visible when map is clicked - nested columns formatted with bulma -->
+        <div id="data" class="hide">
+            <div  class="columns is-multiline is-full-mobile"> 
+                <div id="parkdata" class="column is-4 is-offset-1 has-text-centered is-full-mobile"></div>
+                <div>
+                    <div id="forecast-container" class ="column is-12 has-text-centered is-offset-1"></div> 
+                    <div class="columns mt-6">
+                        <div id="parkinfo" class="column is-offset-2"></div>
+                        <div id="thingstodo" class="column is-offset-1"></div>
+                        <div id="contactinfo" class="column is-offset-1"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 

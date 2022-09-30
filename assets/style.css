@@ -7,15 +7,17 @@ html{
     font-family: system-ui;
 }
 
+/* header image */
 .hero{
     position: relative;
     height: 230px;
     overflow: hidden;
-    background: url("../images/bg-glacier.jpeg") center no-repeat;
+    background: url("../assets/images/bg-glacier.jpeg") center no-repeat;
     background-image: center no-repeat;
     background-size: cover;
 }
 
+/* header formatted */
 .container{
     position: absolute;
     top: 50%;
@@ -34,6 +36,7 @@ html{
 }
 
 .container h1 span{
+    border-radius: 15px;
     border: 10px solid white;
     padding: 6px 14px;
     display: inline-block;
@@ -47,6 +50,7 @@ html{
     color: white;
 }
 
+/* header links formatted */
 .resources,
 .contributors{
     padding: 5px;
@@ -62,6 +66,7 @@ html{
 
 }
 
+/* hover effect for header links */
 .resources:hover,
 .contributors:hover{
     text-decoration: none;
@@ -71,39 +76,51 @@ html{
     transform: scale(2.2);
 }
 
+/* hides park data before click */
 .hide{
     display:none;
 }
 
-#map{
-    justify-content: right;
-    margin: auto;
-    margin-right: 60px;
-}
-
+/* formats forecast days */
 .forecast{
-    background-color: #343734;
-    border-radius: 5px;
+    background-color: #34373474;
+    border-radius: 15px;
     color: white;
     margin: 15px;
     padding:10px;
     display: inline-flex;
   }
 
-  @media screen and (max-width: 1279px) {
-    .my-element {
-        
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-element {
+  /* rounds corners & adds shadow and margin */
+#parkdata, #parkinfo, #thingstodo, #contactinfo, #forecast-container{
+    border-radius: 15px;
+    Box-shadow:0 10px 20px rgba(208, 189, 189, 0.12), 0 6px 6px rgba(123, 118, 118, 0.12);
+    margin-bottom: 20px;
+}
 
-    }
-  }
+/* rounds image corners */
+img{
+    border-radius:15px;
+}
 
-/*  adding and removing class in JS -
-$('#className').classList.add('hide')
-$('#className').classList.remove('hide') */
+/* makes header and data boxes responsive */
+@media (max-width: 800px){
+    .container{
+        width: 100%;
+    }
+
+    #parkinfo, #thingstodo, #contactinfo{
+        text-align: center;
+    }
+    #parkdata{
+        width: 100%;
+    }
+
+    #map{
+        width: 100%;
+    }
+}
+
+
 
 

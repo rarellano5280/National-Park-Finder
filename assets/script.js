@@ -1,6 +1,13 @@
-var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1"
-var weatherAPIKey = "117a7453ee844f288c7182432222509"
+// variables set
+var parkAPIKey = "pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1";
+var weatherAPIKey = "117a7453ee844f288c7182432222509";
+var parkinfoContainer = document.getElementById("parkinfo");
+var parkdataContainer = document.getElementById("parkdata");
+var contactContainer = document.getElementById("contactinfo");
+var toDoContainer = document.getElementById("thingstodo");
+var dataEl = document.querySelector("#data");
 
+// array of park data
 const parksByState = [
     { state: "AL", parkCode: "liri" },
     { state: "AK", parkCode: "glba" },
@@ -52,8 +59,9 @@ const parksByState = [
     { state: "WV", parkCode: "neri" },
     { state: "WI", parkCode: "apis" },
     { state: "WY", parkCode: "yell" },
-]
+];
 
+// takes lat and long from park API and displays forecast for that area
 function getWeatherForecast(lat, long) {
     var latitude = lat;
     var longitude = long;
@@ -63,18 +71,17 @@ function getWeatherForecast(lat, long) {
             return response.json();
         })
         .then(function (data) {
-            console.log("Response Data :", data);
+// creates forecast div
             let forecastHTML = `
             <h3>5-Day Forecast</h3>
             <div ml-10></div>`;
             data.forecast.forecastday.forEach((dayOfWeek) => {
-                console.log(dayOfWeek);
                 var date = dayOfWeek.date;
                 var icon = dayOfWeek.day.condition.icon;
                 var humidity = dayOfWeek.day.avghumidity;
                 var highTemp = dayOfWeek.day.maxtemp_f;
                 var lowTemp = dayOfWeek.day.mintemp_f;
-
+// puts data from API into forecast HTML
                 forecastHTML += `
                 <div class="forecast">
                 <ul class="text-sm list-unstyled">
@@ -92,7 +99,7 @@ function getWeatherForecast(lat, long) {
 };
 
 
-
+// gets data from park API & calls functions to display data
 function getParkInfo(pCode) {
     parkCode = pCode;
     var parkQueryURL = "https://developer.nps.gov/api/v1/parks?parkCode=" + parkCode + "&api_key=pEl7mMX3orgycwe1sObUzotP8ZSa4vTgqOeL8Xf1";
@@ -100,24 +107,23 @@ function getParkInfo(pCode) {
         return response.json();
     })
         .then(function (data) {
-            console.log("Park Data :", data.data);
             var lat = data.data[0].latitude;
             var long = data.data[0].longitude;
             getWeatherForecast(lat, long);
             thingsToDo(data.data);
             generalInfo(data.data);
+// local storage function
             var saveSearch = function (park) {
                 var park = data.data[0].name;
-                console.log(data.data[0].name);
                 let repeat = false;
-                // Check if search in local storage
+// Check if search in local storage
                 for (let i = 0; i < localStorage.length; i++) {
                     if (localStorage["parks" + i] === park) {
                         repeat = true;
                         break;
                     }
                 }
-                // Save to localStorage if search is new
+// Save to localStorage if search is new
                 if (repeat === false) {
                     localStorage.setItem('parks' + localStorage.length, park);
 
@@ -127,10 +133,8 @@ function getParkInfo(pCode) {
         })
 };
 
-var toDoContainer = document.getElementById("thingstodo");
-
+// renders parl-specific featured activities and entrance fees to page
 function thingsToDo(data) {
-    console.log(data);
     var toDoTitle = document.createElement("h4");
     toDoTitle.textContent = "Featured Activities: ";
     var toDoList = document.createElement("h3");
@@ -151,29 +155,10 @@ function thingsToDo(data) {
     };
 }
 
-var parkinfoContainer = document.getElementById("parkinfo");
-var parkdataContainer = document.getElementById("parkdata");
-var contactContainer = document.getElementById("contactinfo");
-
-// save to local storage
-var saveSearch = function (newSearch) {
-    let repeat = false;
-    // Check if search in local storage
-    for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage["parks" + i] === newSearch) {
-            repeat = true;
-            break;
-        }
-    }
-    // Save to localStorage if search is new
-    if (repeat === false) {
-        localStorage.setItem('parks' + localStorage.length, newSearch);
-
-    }
-};
-
+// displays data from park API
 function generalInfo(data) {
 
+// renders park name, image, and address 
     var infoBox = document.createElement("h1");
     infoBox.textContent = data[0].fullName;
 
@@ -187,13 +172,11 @@ function generalInfo(data) {
     address.textContent = "Park Address: " + data[0].addresses[0].line1 + " " + data[0].addresses[0].city + ", " + data[0].addresses[0].stateCode + " " + data[0].addresses[0].postalCode;
     infoBox.appendChild(address);
 
+// creates box for park hours and inputs data from API
     var infoTitle = document.createElement("h4");
-
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
-
     var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: ", "Sunday: "];
-
     for (var i = 0; i < dayTitleArray.length; i++) {
         var dayArray = [data[0].operatingHours[0].standardHours.monday, data[0].operatingHours[0].standardHours.tuesday, data[0].operatingHours[0].standardHours.wednesday, data[0].operatingHours[0].standardHours.thursday, data[0].operatingHours[0].standardHours.friday, data[0].operatingHours[0].standardHours.saturday, data[0].operatingHours[0].standardHours.sunday];
         var hours = document.createElement("li");
@@ -203,7 +186,7 @@ function generalInfo(data) {
         parkinfoContainer.appendChild(infoTitle);
     };
     
-
+// creates contact info box and inputs data from API
     var contactInfo = document.createElement("h3");
     contactInfo.textContent = "Contact Info: "
     var email = document.createElement("li");
@@ -220,19 +203,18 @@ $(document).ready(function () {
     $('#map').usmap({});
 });
 
-// lets you click on map to run function
+// lets you click on map to run functions & see output
 $('#map').usmap({
     stateHoverStyles: { fill: 'white' },
     showLabels: true,
     click: function (event, data) {
-        // Output the abbreviation of the state name to the console
-        console.log(data.name);
         for (var i = 0; i < parksByState.length; i++) {
             if (data.name == parksByState[i].state) {
                 var pCode = parksByState[i].parkCode;
                 getParkInfo(pCode);
             }
         };
+        dataEl.classList.remove("hide");
         $(parkinfoContainer).empty();
         $(parkdataContainer).empty();
         $(toDoContainer).empty();
