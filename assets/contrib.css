@@ -38,6 +38,7 @@ h1:after{
 
 .container h1 span{
    border: 5px solid black;
+   border-radius: 15px;
    padding: 6px 14px;
    display: inline-block;
 }
@@ -49,6 +50,7 @@ h1:after{
  
  .profile .img-box{
     border:2px solid #fff;
+    border-radius: 15px;
     opacity: 1;
     display: block;
     position: relative;
@@ -74,6 +76,10 @@ h1:after{
     left: 50%;
     transform: translateX(-45%);
     opacity: 0;
+ }
+ 
+ img{
+   border-radius: 15px;
  }
 
  .img-box ul li{
