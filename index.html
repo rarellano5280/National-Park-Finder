@@ -6,48 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css" />
     <title>National Park Finder</title>
 </head>
 
 <body>
-    <div class="hero" class="mb-5">
-        <div class="container">
-            <h1><span>xplor</span></h1>
-            <span class="title">National Park Finder</span>
-            <a class="resources" href="https://www.nps.gov/planyourvisit/index.htm">Resources</a>
-            <a class="contributors" href="./contrib.html">Contributors</a>
+    <main>
+        <div class="hero" class="mb-5">
+            <div class="container" id="header">
+                <h1><span>xplor</span></h1>
+                <span class="title">National Park Finder</span>
+                <a class="resources" href="https://www.nps.gov/planyourvisit/index.htm">Resources</a>
+                <a class="contributors" href="./contrib.html">Contributors</a>
+            </div>
         </div>
-    </div>
 
-    <main class="is-mobile">
         <div id="tagline" class="box column is-2 is-offset-5 has-text-centered mt-5">
             <h1 class="content is-large">Select a State</h1>
             <p>Click on a state to unlock details on it's most popular national park.</p>
             <p>Use the resources link above for help planning your trip.</p>
         </div>
 
-        <div class="column is-6 is-offset-3">
-            <div id="map" style="height: 1000px"></div>
+        <div class="container">
+            <div id="map" style="height: 520px; width: 900px;"></div>
+            <!-- /* overflow: hidden; position: relative; top: 50%; left: 50%;"></div> */ -->
         </div>
 
         <div id="search-history">
             <div id="recent-searches"></div>
         </div>
-    </main>
-    <main>
-    
-        <div> 
-            <div id="forecast-container" style="float:right" class ="box column is-7 has-text-centered"></div>
+
+        <div>
+            <div id="forecast-container" style="float:right" class="box column is-7 has-text-centered"></div>
         </div>
 
-        <div> 
-                <div id="parkdata" style="float:left" class="box column is-5 has-text-centered"></div>
-                <div id="parkinfo" style="float:left" class="box column is-4"></div>
-                <div id="thingstodo" style="float:left" class="box column is-3"></div>
-                <div id="contactinfo" style="float:left" class="box column is-3"></div>
-            </div> 
+        <div>
+            <div id="parkdata" style="float:left" class="box column is-5 has-text-centered"></div>
+            <div id="parkinfo" style="float:left" class="box column is-4"></div>
+            <div id="thingstodo" style="float:left" class="box column is-3"></div>
+            <div id="contactinfo" style="float:left" class="box column is-3"></div>
         </div>
     </main>
 

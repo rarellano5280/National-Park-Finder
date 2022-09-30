@@ -1,5 +1,5 @@
 body,
-html{
+html {
     height: 100%;
     margin: 0;
     padding: 0;
@@ -7,7 +7,7 @@ html{
     font-family: system-ui;
 }
 
-.hero{
+.hero {
     position: relative;
     height: 230px;
     overflow: hidden;
@@ -16,7 +16,7 @@ html{
     background-size: cover;
 }
 
-.container{
+#header {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -27,19 +27,19 @@ html{
     text-transform: uppercase;
 }
 
-.container h1{
+#header h1 {
     font-size: 70px;
     letter-spacing: 0.4rem;
     margin: 0;
 }
 
-.container h1 span{
+#header h1 span {
     border: 10px solid white;
     padding: 6px 14px;
     display: inline-block;
 }
 
-.title{
+.title {
     margin: 20px;
     display: block;
     font-size: 20px;
@@ -48,7 +48,7 @@ html{
 }
 
 .resources,
-.contributors{
+.contributors {
     padding: 5px;
     color: white;
     cursor: pointer;
@@ -63,7 +63,7 @@ html{
 }
 
 .resources:hover,
-.contributors:hover{
+.contributors:hover {
     text-decoration: none;
     color: inherit;
     box-shadow: 0 0 1.5rem white;
@@ -71,39 +71,33 @@ html{
     transform: scale(2.2);
 }
 
-.hide{
-    display:none;
+.hide {
+    display: none;
 }
 
-#map{
+#map {
     justify-content: right;
     margin: auto;
     margin-right: 60px;
 }
 
-.forecast{
+.forecast {
     background-color: #343734;
     border-radius: 5px;
     color: white;
     margin: 15px;
-    padding:10px;
+    padding: 10px;
     display: inline-flex;
-  }
+}
 
-  @media screen and (max-width: 1279px) {
-    .my-element {
-        
-    }
-  }
-  
-  @media screen and (min-width: 1280px) {
-    .my-element {
+@media screen and (max-width: 1279px) {
+    .my-element {}
+}
 
-    }
-  }
+@media screen and (min-width: 1280px) {
+    .my-element {}
+}
 
 /*  adding and removing class in JS -
 $('#className').classList.add('hide')
 $('#className').classList.remove('hide') */
-
-
