@@ -30,13 +30,14 @@
         <div class="container">
             <div id="map" style="height: 520px; width: 900px;"></div>
             <!-- /* overflow: hidden; position: relative; top: 50%; left: 50%;"></div> */ -->
-        </div>
+        
 
         <div id="modal-js-example" class="modal">
             <div class="modal-background"></div>
 
             <div class="modal-content">
-                <div class="box">
+                <div class="box" id="history">
+                    Past searches:
                     <!-- Your content -->
                 </div>
             </div>
@@ -44,8 +45,8 @@
             <button class="modal-close is-large" aria-label="close"></button>
         </div>
 
-        <button class="js-modal-trigger" data-target="modal-js-example">
-            Open JS example modal
+        <button class="js-modal-trigger button is-primary mb-4 is-fullwidth" data-target="modal-js-example">
+            Recent Park Searches
         </button>
 
         <div>
@@ -58,6 +59,7 @@
             <div id="thingstodo" style="float:left" class="box column is-3"></div>
             <div id="contactinfo" style="float:left" class="box column is-3"></div>
         </div>
+    </div>
     </main>
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

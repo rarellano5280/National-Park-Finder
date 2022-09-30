@@ -168,14 +168,20 @@ var saveSearch = function (newSearch) {
     // Save to localStorage if search is new
     if (repeat === false) {
         localStorage.setItem('parks' + localStorage.length, newSearch);
-
     }
 };
 
+var historyContainer = document.getElementById("history");
+
 function getHistory() {
     for (let i = 0; i < localStorage.length; i++) {
-        var storedParks = localStorage.getItem('parks');
+        var storedParks = localStorage.getItem('parks' + [i]);
         console.log(storedParks);
+        var historyList = document.createElement("ul");
+        var historyItem = document.createElement("li");
+        historyItem.textContent = storedParks;
+        historyList.appendChild(historyItem);
+        historyContainer.appendChild(historyList);
     }
 }
 
