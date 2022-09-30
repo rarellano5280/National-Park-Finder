@@ -99,12 +99,23 @@ img{
 }
 
 /* makes header and data boxes responsive */
-@media (max-width: 600px){
-    #parkinfo, #thingstodo, #contactinfo{
-        text-align: center;
-    }
-
+@media (max-width: 800px){
     .container{
         width: 100%;
     }
+
+    #parkinfo, #thingstodo, #contactinfo{
+        text-align: center;
+    }
+    #parkdata{
+        width: 100%;
+    }
+
+    #map{
+        width: 100%;
+    }
 }
+
+
+
+
