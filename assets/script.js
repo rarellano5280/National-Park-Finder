@@ -132,7 +132,7 @@ function thingsToDo(data) {
     console.log(data);
     var toDoTitle = document.createElement("h4");
     toDoTitle.textContent = "Featured Activities: ";
-    var toDoList = document.createElement("ul");
+    var toDoList = document.createElement("h3");
     for (let i = 0; i < 4; i++) {
         var listItems = document.createElement("li");
         listItems.textContent = data[0].activities[i].name;
@@ -140,10 +140,19 @@ function thingsToDo(data) {
     }
     toDoTitle.appendChild(toDoList);
     toDoContainer.appendChild(toDoTitle);
+
+    if (data[0].states == "GA" || data[0].states == "AR") {
+        
+    } else {
+        var entranceFees = document.createElement("h3");
+        entranceFees.textContent = "Entrance Fees: $" + data[0].entranceFees[0].cost;
+        toDoList.appendChild(entranceFees);
+    };
 }
 
 var parkinfoContainer = document.getElementById("parkinfo");
 var parkdataContainer = document.getElementById("parkdata");
+var contactContainer = document.getElementById("contactinfo");
 
     // save to local storage
 var saveSearch = function(newSearch){
@@ -187,27 +196,21 @@ function generalInfo(data) {
         var dayArray = [data[0].operatingHours[0].standardHours.monday, data[0].operatingHours[0].standardHours.tuesday, data[0].operatingHours[0].standardHours.wednesday, data[0].operatingHours[0].standardHours.thursday, data[0].operatingHours[0].standardHours.friday, data[0].operatingHours[0].standardHours.saturday, data[0].operatingHours[0].standardHours.sunday];
         var hours = document.createElement("li");
         hours.textContent = dayTitleArray[i] + dayArray[i];
-        // hours.textContent = data[0].operatingHours[0].description;
         infoList.appendChild(hours);
-    }
-    if (data[0].states == "GA" || data[0].states == "AR") {
-        
-    } else {
-        var entranceFees = document.createElement("li");
-    entranceFees.textContent = "Entrance Fees: $" + data[0].entranceFees[0].cost;
-    infoList.appendChild(entranceFees);
+        infoTitle.appendChild(infoList);
+        parkinfoContainer.appendChild(infoTitle);
     };
+    
 
+    var contactInfo = document.createElement("h3");
+    contactInfo.textContent = "Contact Info: "
     var email = document.createElement("li");
     email.textContent = "Email: " + data[0].contacts.emailAddresses[0].emailAddress;
-    infoList.appendChild(email);
+    contactInfo.appendChild(email);
     var phone = document.createElement("li");
     phone.textContent = "Phone: " + data[0].contacts.phoneNumbers[0].phoneNumber;
-    infoList.appendChild(phone);
-    parkinfoContainer.appendChild(infoTitle);
-
-     
-
+    contactInfo.appendChild(phone);
+    contactContainer.appendChild(contactInfo);
 };
 
 // pulls map up
@@ -231,6 +234,7 @@ $('#map').usmap({
         $(parkinfoContainer).empty();
         $(parkdataContainer).empty();
         $(toDoContainer).empty();
+        $(contactContainer).empty();
     },
 });
 
