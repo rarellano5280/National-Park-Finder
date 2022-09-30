@@ -143,7 +143,7 @@ function thingsToDo(data) {
     toDoContainer.appendChild(toDoTitle);
 
     if (data[0].states == "GA" || data[0].states == "AR") {
-        
+
     } else {
         var entranceFees = document.createElement("h3");
         entranceFees.textContent = "Entrance Fees: $" + data[0].entranceFees[0].cost;
@@ -172,13 +172,20 @@ var saveSearch = function (newSearch) {
     }
 };
 
+function getHistory() {
+    for (let i = 0; i < localStorage.length; i++) {
+        var storedParks = localStorage.getItem('parks');
+        console.log(storedParks);
+    }
+}
+
 function generalInfo(data) {
 
     var infoBox = document.createElement("h1");
     infoBox.textContent = data[0].fullName;
 
     var img = document.createElement("img");
-    img.setAttribute("style","width: 600px; height: 550px;");
+    img.setAttribute("style", "width: 600px; height: 550px;");
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
@@ -202,7 +209,7 @@ function generalInfo(data) {
         infoTitle.appendChild(infoList);
         parkinfoContainer.appendChild(infoTitle);
     };
-    
+
 
     var contactInfo = document.createElement("h3");
     contactInfo.textContent = "Contact Info: "
@@ -240,5 +247,49 @@ $('#map').usmap({
     },
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    // Functions to open and close a modal
+    function openModal($el) {
+        $el.classList.add('is-active');
+        getHistory();
+    }
 
+    function closeModal($el) {
+        $el.classList.remove('is-active');
+    }
+
+    function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+            closeModal($modal);
+        });
+    }
+
+    // Add a click event on buttons to open a specific modal
+    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+        const modal = $trigger.dataset.target;
+        const $target = document.getElementById(modal);
+
+        $trigger.addEventListener('click', () => {
+            openModal($target);
+        });
+    });
+
+    // Add a click event on various child elements to close the parent modal
+    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        const $target = $close.closest('.modal');
+
+        $close.addEventListener('click', () => {
+            closeModal($target);
+        });
+    });
+
+    // Add a keyboard event to close all modals
+    document.addEventListener('keydown', (event) => {
+        const e = event || window.event;
+
+        if (e.keyCode === 27) { // Escape key
+            closeAllModals();
+        }
+    });
+});
 
