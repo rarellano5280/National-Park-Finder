@@ -71,13 +71,11 @@ function getWeatherForecast(lat, long) {
             return response.json();
         })
         .then(function (data) {
-            console.log("Response Data :", data);
 // creates forecast div
             let forecastHTML = `
             <h3>5-Day Forecast</h3>
             <div ml-10></div>`;
             data.forecast.forecastday.forEach((dayOfWeek) => {
-                console.log(dayOfWeek);
                 var date = dayOfWeek.date;
                 var icon = dayOfWeek.day.condition.icon;
                 var humidity = dayOfWeek.day.avghumidity;
@@ -117,7 +115,6 @@ function getParkInfo(pCode) {
 // local storage function
             var saveSearch = function (park) {
                 var park = data.data[0].name;
-                console.log(data.data[0].name);
                 let repeat = false;
 // Check if search in local storage
                 for (let i = 0; i < localStorage.length; i++) {
@@ -138,7 +135,6 @@ function getParkInfo(pCode) {
 
 // renders parl-specific featured activities and entrance fees to page
 function thingsToDo(data) {
-    console.log(data);
     var toDoTitle = document.createElement("h4");
     toDoTitle.textContent = "Featured Activities: ";
     var toDoList = document.createElement("h3");
