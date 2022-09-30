@@ -106,22 +106,23 @@ function getParkInfo(pCode) {
             getWeatherForecast(lat, long);
             thingsToDo(data.data);
             generalInfo(data.data);
-            var saveSearch = function(park){
+            var saveSearch = function (park) {
                 var park = data.data[0].name;
                 console.log(data.data[0].name);
                 let repeat = false;
-              // Check if search in local storage
+                // Check if search in local storage
                 for (let i = 0; i < localStorage.length; i++) {
                     if (localStorage["parks" + i] === park) {
                         repeat = true;
                         break;
                     }
                 }
-              // Save to localStorage if search is new
+                // Save to localStorage if search is new
                 if (repeat === false) {
                     localStorage.setItem('parks' + localStorage.length, park);
-                    
-            }};
+
+                }
+            };
             saveSearch(data.data[0].name);
         })
 };
@@ -154,21 +155,22 @@ var parkinfoContainer = document.getElementById("parkinfo");
 var parkdataContainer = document.getElementById("parkdata");
 var contactContainer = document.getElementById("contactinfo");
 
-    // save to local storage
-var saveSearch = function(newSearch){
-        let repeat = false;
-      // Check if search in local storage
-        for (let i = 0; i < localStorage.length; i++) {
-            if (localStorage["parks" + i] === newSearch) {
-                repeat = true;
-                break;
-            }
+// save to local storage
+var saveSearch = function (newSearch) {
+    let repeat = false;
+    // Check if search in local storage
+    for (let i = 0; i < localStorage.length; i++) {
+        if (localStorage["parks" + i] === newSearch) {
+            repeat = true;
+            break;
         }
-      // Save to localStorage if search is new
-        if (repeat === false) {
-            localStorage.setItem('parks' + localStorage.length, newSearch);
-            
-    }};
+    }
+    // Save to localStorage if search is new
+    if (repeat === false) {
+        localStorage.setItem('parks' + localStorage.length, newSearch);
+
+    }
+};
 
 function generalInfo(data) {
 
@@ -189,9 +191,9 @@ function generalInfo(data) {
 
     var infoList = document.createElement("ul");
     infoTitle.appendChild(infoList);
-    
-    var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: " , "Sunday: "];
-    
+
+    var dayTitleArray = ["Monday: ", "Tuesday: ", "Wednesday: ", "Thursday: ", "Friday: ", "Saturday: ", "Sunday: "];
+
     for (var i = 0; i < dayTitleArray.length; i++) {
         var dayArray = [data[0].operatingHours[0].standardHours.monday, data[0].operatingHours[0].standardHours.tuesday, data[0].operatingHours[0].standardHours.wednesday, data[0].operatingHours[0].standardHours.thursday, data[0].operatingHours[0].standardHours.friday, data[0].operatingHours[0].standardHours.saturday, data[0].operatingHours[0].standardHours.sunday];
         var hours = document.createElement("li");
