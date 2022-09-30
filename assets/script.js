@@ -169,11 +169,7 @@ function generalInfo(data) {
     infoBox.textContent = data[0].fullName;
 
     var img = document.createElement("img");
-<<<<<<< HEAD
-    img.setAttribute("style", "background-color: salmon; color: white; width: 500px; height: 500px;");
-=======
     img.setAttribute("style","width: 600px; height: 550px;");
->>>>>>> 5837a63c8ed7d8385b5004afa89c28b7b9d2f46a
     img.setAttribute("src", data[0].images[0].url);
     infoBox.appendChild(img);
     parkdataContainer.appendChild(infoBox);
@@ -228,7 +224,6 @@ $('#map').usmap({
     click: function (event, data) {
         // Output the abbreviation of the state name to the console
         console.log(data.name);
-        showLabels: true;
         for (var i = 0; i < parksByState.length; i++) {
             if (data.name == parksByState[i].state) {
                 var pCode = parksByState[i].parkCode;
