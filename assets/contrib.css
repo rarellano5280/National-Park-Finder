@@ -2,7 +2,7 @@
     margin: 75px 0;
 }
 
-h1{
+.profile h1{
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
@@ -37,10 +37,11 @@ h1:after{
 }
 
 .container h1 span{
-   border: 5px solid black;
-   border-radius: 15px;
-   padding: 6px 14px;
-   display: inline-block;
+   border: 5px solid black !important;
+   border-radius: 15px !important;
+   padding: 6px 14px !important;
+   display: inline-block !important;
+   font-weight: 300 !important;
 }
 
 
@@ -60,10 +61,10 @@ h1:after{
  -khtml-box-shadow: 10px 10px 5px #ccc;
  }
 
- .profile h2{
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 15px;
+ h2{
+    font-size: 22px !important;
+    font-weight: bold!important;
+    margin-top: 15px !important;
  }
 
  .img-box ul{
