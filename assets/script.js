@@ -6,6 +6,7 @@ var parkdataContainer = document.getElementById("parkdata");
 var contactContainer = document.getElementById("contactinfo");
 var toDoContainer = document.getElementById("thingstodo");
 var dataEl = document.querySelector("#data");
+var historyContainer = document.getElementById("history");
 
 // array of park data
 const parksByState = [
@@ -154,28 +155,6 @@ function thingsToDo(data) {
         toDoList.appendChild(entranceFees);
     };
 }
-
-var parkinfoContainer = document.getElementById("parkinfo");
-var parkdataContainer = document.getElementById("parkdata");
-var contactContainer = document.getElementById("contactinfo");
-
-// save to local storage
-var saveSearch = function (newSearch) {
-    let repeat = false;
-    // Check if search in local storage
-    for (let i = 0; i < localStorage.length; i++) {
-        if (localStorage["parks" + i] === newSearch) {
-            repeat = true;
-            break;
-        }
-    }
-    // Save to localStorage if search is new
-    if (repeat === false) {
-        localStorage.setItem('parks' + localStorage.length, newSearch);
-    }
-};
-
-var historyContainer = document.getElementById("history");
 
 function getHistory() {
     for (let i = 0; i < localStorage.length; i++) {
