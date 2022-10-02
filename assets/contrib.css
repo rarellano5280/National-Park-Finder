@@ -2,6 +2,7 @@
     margin: 75px 0;
     padding: 15px;
 }
+/* Same styling as our main page header */
 
 .profile h1{
     text-align: center;
@@ -19,7 +20,7 @@ h1:after{
     width: 150px;
     margin: 10px auto;
 }
-
+/* Had to add !important on margin to overide Bulma styling */
 .container{
    margin: 0 !important;
    display: flex;
@@ -52,6 +53,7 @@ h1:after{
     margin-top: 25px;
  }
  
+ /* Fancy box shadows */
  .profile .img-box{
     border:2px solid #fff;
     border-radius: 15px;
@@ -70,6 +72,7 @@ h1:after{
     margin-top: 15px !important;
  }
 
+/* Positioning for external link icons*/
  .img-box ul{
     margin: 0;
     padding: 20px 0;
@@ -90,6 +93,7 @@ h1:after{
    min-height: 250px;
  }
 
+/* Styling for external link icons */
  .img-box ul li{
     width: 40px;
     height: 40px;
@@ -112,6 +116,7 @@ h1:after{
     opacity: 1;
  }
 
+/* Added hover color to make it more user friendly */
  .img-box a:hover li{
     color: #007bff;
     border: 1px solid #007bff ;
