@@ -1,5 +1,6 @@
 .team{
     margin: 75px 0;
+    padding: 15px;
 }
 
 .profile h1{
@@ -20,7 +21,9 @@ h1:after{
 }
 
 .container{
-   position: absolute;
+   margin: 0 !important;
+   display: flex;
+   justify-content: center;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
@@ -81,6 +84,10 @@ h1:after{
  
  img{
    border-radius: 15px;
+   background-size: cover;
+   min-width: 250px;
+   max-height: 250px;
+   min-height: 250px;
  }
 
  .img-box ul li{
