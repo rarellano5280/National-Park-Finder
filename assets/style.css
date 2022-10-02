@@ -110,19 +110,16 @@ img{
 
 /* makes header and data boxes responsive */
 @media (max-width: 800px){
-    #header{
-        width: 100%;
-    }
-
-    #parkinfo, #thingstodo, #contactinfo{
-        text-align: center;
-    }
-    #parkdata{
+    #header, #parkdata, #forecast-container{
         width: 100%;
     }
 
     #map{
-        width: 100%;
+        width: auto !important; 
+    }
+
+    #parkinfo, #thingstodo, #contactinfo{
+        text-align: center;
     }
 }
 
