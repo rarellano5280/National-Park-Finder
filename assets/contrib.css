@@ -1,8 +1,10 @@
 .team{
     margin: 75px 0;
+    padding: 15px;
 }
+/* Same styling as our main page header */
 
-h1{
+.profile h1{
     text-align: center;
     font-weight: bold;
     letter-spacing: 2px;
@@ -18,9 +20,11 @@ h1:after{
     width: 150px;
     margin: 10px auto;
 }
-
+/* Had to add !important on margin to overide Bulma styling */
 .container{
-   position: absolute;
+   margin: 0 !important;
+   display: flex;
+   justify-content: center;
    top: 50%;
    left: 50%;
    transform: translate(-50%, -50%);
@@ -37,10 +41,11 @@ h1:after{
 }
 
 .container h1 span{
-   border: 5px solid black;
-   border-radius: 15px;
-   padding: 6px 14px;
-   display: inline-block;
+   border: 5px solid black !important;
+   border-radius: 15px !important;
+   padding: 6px 14px !important;
+   display: inline-block !important;
+   font-weight: 300 !important;
 }
 
 
@@ -48,6 +53,7 @@ h1:after{
     margin-top: 25px;
  }
  
+ /* Fancy box shadows */
  .profile .img-box{
     border:2px solid #fff;
     border-radius: 15px;
@@ -60,12 +66,13 @@ h1:after{
  -khtml-box-shadow: 10px 10px 5px #ccc;
  }
 
- .profile h2{
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 15px;
+ h2{
+    font-size: 22px !important;
+    font-weight: bold!important;
+    margin-top: 15px !important;
  }
 
+/* Positioning for external link icons*/
  .img-box ul{
     margin: 0;
     padding: 20px 0;
@@ -80,8 +87,13 @@ h1:after{
  
  img{
    border-radius: 15px;
+   background-size: cover;
+   min-width: 250px;
+   max-height: 250px;
+   min-height: 250px;
  }
 
+/* Styling for external link icons */
  .img-box ul li{
     width: 40px;
     height: 40px;
@@ -104,6 +116,7 @@ h1:after{
     opacity: 1;
  }
 
+/* Added hover color to make it more user friendly */
  .img-box a:hover li{
     color: #007bff;
     border: 1px solid #007bff ;
