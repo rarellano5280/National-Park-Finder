@@ -153,14 +153,6 @@ function thingsToDo(data) {
   }
   toDoTitle.appendChild(toDoList);
   toDoContainer.appendChild(toDoTitle);
-
-  if (data[0].states == 'GA' || data[0].states == 'AR') {
-  } else {
-    var entranceFees = document.createElement('h3');
-    entranceFees.textContent =
-      'Entrance Fees: $' + data[0].entranceFees[0].cost;
-    toDoList.appendChild(entranceFees);
-  }
 }
 
 function getHistory() {
@@ -177,6 +169,7 @@ function getHistory() {
 
 // displays data from park API
 function generalInfo(data) {
+  console.log(data);
   // renders park name, image, and address
   var infoBox = document.createElement('h1');
   infoBox.textContent = data[0].fullName;
